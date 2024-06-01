@@ -233,14 +233,23 @@ Plug 'preservim/nerdtree'
 " Astro 
 Plug 'wuelnerdotexe/vim-astro'
 
+" Autocomplete
+Plug 'girishji/vimcomplete'
+
 " Svelte
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte'
 
+" Close tags
+Plug 'alvan/vim-closetag'
+
 " Set airline as statusline
 Plug 'vim-airline/vim-airline'
 call plug#end()
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.astro,*.svelte,*.jsx'
+
 
 let g:astro_typescript = 'enable'
 let g:astro_stylus = 'enable'
