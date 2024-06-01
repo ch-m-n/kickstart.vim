@@ -222,19 +222,35 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'ervandew/supertab'
 
 " Colorscheme
-Plug 'ghifarit53/tokyonight-vim'
+Plug 'morhetz/gruvbox'
+
+" Codeium
+Plug 'Exafunction/codeium.vim'
+
+" NERDTree
+Plug 'preservim/nerdtree'
+
+" Astro 
+Plug 'wuelnerdotexe/vim-astro'
+
+" Svelte
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte'
 
 " Set airline as statusline
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
+let g:astro_typescript = 'enable'
+let g:astro_stylus = 'enable'
 
 " [[ Configure plugins ]]
 " Set colorscheme
 set termguicolors
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 0
-colorscheme tokyonight
+" let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_enable_italic = 0
+colorscheme gruvbox
 
 
 " [[ Configure vim-which-key ]]
@@ -346,6 +362,8 @@ inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 " <Tab> triggers Omni completion (<C-x><C-o>) in a coding context
 let g:SuperTabDefaultCompletionType = "context"
 
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
 
 " The line beneath this is called `modeline`. See `:help modeline`
 " vim: ts=2 sts=2 sw=2 et
