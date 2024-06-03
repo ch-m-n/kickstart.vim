@@ -229,6 +229,8 @@ Plug 'Exafunction/codeium.vim'
 
 " NERDTree
 Plug 'preservim/nerdtree'
+" NERDTree icons
+Plug 'ryanoasis/vim-devicons'
 
 " Astro 
 Plug 'wuelnerdotexe/vim-astro'
@@ -246,6 +248,7 @@ Plug 'alvan/vim-closetag'
 
 " Set airline as statusline
 Plug 'vim-airline/vim-airline'
+
 call plug#end()
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.astro,*.svelte,*.jsx'
