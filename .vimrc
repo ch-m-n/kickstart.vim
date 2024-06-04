@@ -248,7 +248,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte'
-
+Plug 'leafgarland/typescript-vim'
 " Close tags
 Plug 'alvan/vim-closetag'
 
@@ -258,7 +258,6 @@ Plug 'vim-airline/vim-airline'
 call plug#end()
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.astro,*.svelte,*.jsx'
-
 
 let g:astro_typescript = 'enable'
 let g:astro_stylus = 'enable'
@@ -272,6 +271,9 @@ colorscheme gruvbox
 
 " Codeium completions
 let g:codeium_enabled = v:true
+let g:codeium_render = v:true
+set statusline+=\{…\}%3{codeium#GetStatusString()}
+
 
 " [[ Configure vim-which-key ]]
 call which_key#register('<Space>', "g:which_key_map")
@@ -382,49 +384,18 @@ inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 " <Tab> triggers Omni completion (<C-x><C-o>) in a coding context
 let g:SuperTabDefaultCompletionType = "context"
 
+" NERDTree
+let NERDTreeMapOpenInTab='<ENTER>'
+
+
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
+autocmd BufWinEnter * NERDTreeMirror
+
 
 " Cursor settings
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
-
-" Airline settings
-
-if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
-
-    " unicode symbols
-    let g:airline_left_sep = '»'
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '«'
-    let g:airline_right_sep = '◀'
-    let g:airline_symbols.crypt = '🔒'
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.linenr = '¶'
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.maxlinenr = '㏑'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.paste = 'Þ'
-    let g:airline_symbols.paste = '∥'
-    let g:airline_symbols.spell = 'Ꞩ'
-    let g:airline_symbols.notexists = 'Ɇ'
-    let g:airline_symbols.whitespace = 'Ξ'
-
-    " powerline symbols
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.maxlinenr = ''
-
 
 " reset the cursor on start (for older versions of vim, usually not required)
 augroup myCmds
