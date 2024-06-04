@@ -226,6 +226,9 @@ Plug 'morhetz/gruvbox'
 
 " Codeium
 Plug 'Exafunction/codeium.vim'
+" Vim stylus 
+Plug 'wavded/vim-stylus'
+
 
 " NERDTree
 Plug 'preservim/nerdtree'
