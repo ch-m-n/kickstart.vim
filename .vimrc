@@ -238,6 +238,9 @@ Plug 'wuelnerdotexe/vim-astro'
 " Autocomplete
 Plug 'girishji/vimcomplete'
 
+" Fugitive
+Plug 'tpope/vim-fugitive'
+
 " Svelte
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -264,6 +267,8 @@ set termguicolors
 " let g:tokyonight_enable_italic = 0
 colorscheme gruvbox
 
+" Codeium completions
+let g:codeium_enabled = v:true
 
 " [[ Configure vim-which-key ]]
 call which_key#register('<Space>', "g:which_key_map")
@@ -380,6 +385,43 @@ autocmd VimEnter * NERDTree | wincmd p
 " Cursor settings
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
+
+" Airline settings
+
+if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+    " unicode symbols
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.crypt = '🔒'
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.maxlinenr = '㏑'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.spell = 'Ꞩ'
+    let g:airline_symbols.notexists = 'Ɇ'
+    let g:airline_symbols.whitespace = 'Ξ'
+
+    " powerline symbols
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.maxlinenr = ''
+
 
 " reset the cursor on start (for older versions of vim, usually not required)
 augroup myCmds
