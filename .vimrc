@@ -265,8 +265,8 @@ let g:astro_stylus = 'enable'
 " [[ Configure plugins ]]
 " Set colorscheme
 set termguicolors
-" let g:tokyonight_style = 'night' " available: night, storm
-" let g:tokyonight_enable_italic = 0
+let g:gruvbox_termcolors = '32'
+let g:gruvbox_contrast_dark = 'soft'
 colorscheme gruvbox
 
 " Codeium completions
@@ -321,6 +321,9 @@ let g:which_key_map['/'] = '[/] Fuzzily search in current buffer'
 let g:lsp_use_native_client = 1
 let g:lsp_semantic_enabled = 0
 let g:lsp_format_sync_timeout = 1000
+
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_virtual_text_enabled = 1
 
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
